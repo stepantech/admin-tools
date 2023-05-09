@@ -10,3 +10,15 @@ Install-WindowsFeature -Name SMTP-Server -IncludeAllSubFeature -IncludeManagemen
 Set-Service SMTPSVC -StartupType Automatic
 Get-Service SMTPSVC | Select Name, Status, StartType
 ```
+
+
+## Vytvoření Inboud connectoru v Exchange Online
+```powershell
+#Připojení do Exchange Online
+Connect-ExchangeOnline -UserPrincipalName <UPN>
+
+#Získání veřejné IP adresy
+$PublicIp =  (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content
+
+#Vytvoření Connectoru
+New-InboundConnector -Name "IIS SMTP Relay" -ConnectorType OnPremises -SenderDomains *.contoso.com -SenderIPAddresses $PublicIP
