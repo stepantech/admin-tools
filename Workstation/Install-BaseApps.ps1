@@ -7,5 +7,8 @@ winget install --id=VideoLAN.VLC -e
 winget install --id=Microsoft.Teams -e
 winget install --id=Zoom.Zoom -e
 
+#TeamViewer QS
+Invoke-WebRequest -URI https://download.teamviewer.com/QS -OutFile %public%\Desktop\TeamViewer_QS.exe
+
 #Lenovo specific
 winget install --id=Lenovo.SystemUpdate  -e
