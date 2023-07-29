@@ -10,6 +10,9 @@ winget install --id=Zoom.Zoom -e
 #TeamViewer QS
 Invoke-WebRequest -URI https://download.teamviewer.com/QS -OutFile C:\Users\Public\Desktop\TeamViewer_QS.exe
 
+# Uninstall Microsoft Teams Personal
+Get-AppxPackage -Name MicrosoftTeams | Remove-AppxPackage
+
 #Lenovo specific
 winget install --id=Lenovo.SystemUpdate  -e
 
