@@ -12,3 +12,6 @@ Invoke-WebRequest -URI https://download.teamviewer.com/QS -OutFile C:\Users\Publ
 
 #Lenovo specific
 winget install --id=Lenovo.SystemUpdate  -e
+
+# Update all installed apps
+winget upgrade --all --silent
